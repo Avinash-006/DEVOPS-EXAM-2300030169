@@ -3,6 +3,7 @@ pipeline {
 
     stages {
 
+    // ===== FRONTEND BUILD =====
         stage('Build Frontend') {
             steps {
                 dir('FRONTEND') {
@@ -12,6 +13,7 @@ pipeline {
             }
         }
 
+    // ===== FRONTEND DEPLOY =====
         stage('Deploy Frontend to Tomcat') {
             steps {
                 bat '''
@@ -24,6 +26,7 @@ pipeline {
             }
         }
 
+    // ===== BACKEND BUILD =====
         stage('Build Backend') {
             steps {
                 dir('BACKEND') {
@@ -32,6 +35,7 @@ pipeline {
             }
         }
 
+     // ===== BACKEND DEPLOY =====
         stage('Deploy Backend to Tomcat') {
             steps {
                 bat '''
